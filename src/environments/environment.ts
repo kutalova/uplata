@@ -4,7 +4,8 @@
 
 export const environment = {
   production: false,
-    serverDomain: 'https://uplata-test.firebaseio.com/uplata-test.json'
+    serverDomain: 'https://uplata-test.firebaseio.com/',
+    serverDomainDefaultURL: 'https://uplata-test.firebaseio.com/uplata-test.json'
 };
 
 /*

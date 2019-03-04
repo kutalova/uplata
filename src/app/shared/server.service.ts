@@ -9,7 +9,7 @@ export class ServerService {
 
 
     getCategoriesList() {
-        return this.http.get(environment.serverDomain);
+        return this.http.get(environment.serverDomainDefaultURL);
     }
 
 }

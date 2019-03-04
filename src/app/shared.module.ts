@@ -12,11 +12,9 @@ import { TariffsComponent } from './core/tariffs/tariffs.component';
 import { SafetyComponent } from './core/safety/safety.component';
 import { LegalComponent } from './core/legal/legal.component';
 import { HeaderComponent } from './core/header/header.component';
-import { ServerTestComponent } from './core/servertest/servertest.component';
 
 @NgModule({
     exports: [
-        ServerTestComponent,
         HeaderComponent,
         Error404Component,
         Error500Component,
@@ -33,7 +31,6 @@ import { ServerTestComponent } from './core/servertest/servertest.component';
         HttpClientModule
     ],
     declarations: [
-        ServerTestComponent,
         HeaderComponent,
         Error404Component,
         Error500Component,

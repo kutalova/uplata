@@ -7,7 +7,6 @@ import {TariffsComponent} from './core/tariffs/tariffs.component';
 import {FaqComponent} from './core/faq/faq.component';
 import {SafetyComponent} from './core/safety/safety.component';
 import {LegalComponent} from './core/legal/legal.component';
-import { ServerTestComponent } from './core/servertest/servertest.component';
 
 
 
@@ -32,9 +31,6 @@ const AppRouter: Routes = [
             {
                 path: '404', component: Error404Component
             },  
-            {
-                path: 'server', component: ServerTestComponent
-            },          
             {
                 path: '**', loadChildren: './modules/home/home.module#HomeModule'
             }
