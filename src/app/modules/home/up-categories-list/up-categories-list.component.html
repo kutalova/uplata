@@ -1,3 +1,9 @@
 <div class="categories_wrapper">
-  <!--<app-up-categories-item></app-up-categories-item>-->
+
+
+    <ul class="list-group" *ngFor="let category of categories">
+        <li class="list-group-item"><a [routerLink]="['/',category.URI]">{{
+            category.name }}</a></li>
+    </ul>
+
 </div>

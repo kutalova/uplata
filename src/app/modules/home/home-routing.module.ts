@@ -1,17 +1,21 @@
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
+import { HomeComponent } from './home.component';
+import {UpServicesListComponent} from './up-services-list/up-services-list.component';
 
-import {HomeComponent} from './home.component';
 
-const routes: Routes = [
 
+const AppRouter: Routes = [
+    {
+        path: '/:category', component: UpServicesListComponent
+    },
     {
         path: '', component: HomeComponent
     }
 ];
 
 @NgModule({
-    imports: [RouterModule.forChild(routes)],
+    imports: [RouterModule.forChild(AppRouter)],
     exports: [RouterModule]
 })
 export class HomeRoutingModule {

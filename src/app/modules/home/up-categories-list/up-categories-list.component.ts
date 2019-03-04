@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import {ServerService} from '../../../shared/server.service';
 
 @Component({
   selector: 'app-up-categories-list',
@@ -7,9 +8,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class UpCategoriesListComponent implements OnInit {
 
-  constructor() { }
+    categories = [];
+    constructor(private serverService: ServerService) {}
 
-  ngOnInit() {
-  }
-
+    ngOnInit() {
+        this.serverService.getCategoriesList()
+            .subscribe(
+                (categories: any[]) => this.categories = categories,
+                (error) => console.log(error)
+            );
+    }
 }
