@@ -8,9 +8,11 @@ import { FaqComponent } from './core/faq/faq.component';
 import { TariffsComponent } from './core/tariffs/tariffs.component';
 import { SafetyComponent } from './core/safety/safety.component';
 import { LegalComponent } from './core/legal/legal.component';
+import {HeaderComponent} from './core/header/header.component';
 
 @NgModule({
     exports: [
+        HeaderComponent,
         Error404Component,
         Error500Component,
         UsComponent,
@@ -23,6 +25,7 @@ import { LegalComponent } from './core/legal/legal.component';
         RouterModule
     ],
     declarations: [
+        HeaderComponent,
         Error404Component,
         Error500Component,
         UsComponent,

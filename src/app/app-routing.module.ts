@@ -32,12 +32,6 @@ const AppRouter: Routes = [
                 path: '404', component: Error404Component
             },
             {
-                path: 'user', loadChildren: './modules/user/user.module#UserModule'
-            },
-            {
-                path: 'adv', loadChildren: './modules/adv/adv.module#AdvModule'
-            },
-            {
                 path: '', loadChildren: './modules/home/home.module#HomeModule'
             }
         ]
