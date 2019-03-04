@@ -1,0 +1,19 @@
+nav {
+  background: #4f5467;
+  height: 70px;
+  a {
+    display: inline-block;
+    color: #FFF;
+    text-transform: uppercase;
+    cursor: pointer;
+    padding: 0 1em;
+    line-height: 70px;
+    letter-spacing: .5px;
+    transition: all .2s ease;
+    text-decoration: none;
+    font-size: 14px;
+    &:hover {
+      color: #f60;
+    }
+  }
+}
