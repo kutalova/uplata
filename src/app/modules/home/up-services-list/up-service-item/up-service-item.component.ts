@@ -11,6 +11,7 @@ export class UpServiceItemComponent implements OnInit {
 
     constructor(private router: Router, private route: ActivatedRoute, private serverService: ServerService) {
     }
+
     showService: string;
 
     ngOnInit() {

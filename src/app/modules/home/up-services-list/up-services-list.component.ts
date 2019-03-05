@@ -37,9 +37,9 @@ export class UpServicesListComponent implements OnInit {
                     (error) => console.error(error)
                 );
 
-        if(this.serverService.storeServiceName ){
-            this.serverService.storeServiceName = '';
-        }
+            if (this.serverService.storeServiceName) {
+                this.serverService.storeServiceName = '';
+            }
         }
     }
 

@@ -1,7 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ServerService} from '../../../shared/services/server.service';
 import {takeWhile} from 'rxjs/operators';
-import { Router } from '@angular/router';
+import {Router} from '@angular/router';
 
 @Component({
     selector: 'app-up-categories-list',
@@ -23,7 +23,7 @@ export class UpCategoriesListComponent implements OnInit {
                     this.categories = categories;
                     for (let category of categories) {
                         this.router.config.unshift(
-                            { path: category.URI, loadChildren: './modules/home/home.module#HomeModule' },
+                            {path: category.URI, loadChildren: './modules/home/home.module#HomeModule'},
                         );
                     }
 
