@@ -11,5 +11,8 @@ export class ServerService {
     getCategoriesList() {
         return this.http.get(environment.serverDomainDefaultURL);
     }
+    getServicesList(category: string) {
+        return this.http.get(environment.serverDomain + category + '.json');
+    }
 
 }
