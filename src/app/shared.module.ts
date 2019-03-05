@@ -1,10 +1,9 @@
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
 import {FormsModule} from '@angular/forms';
-import {HttpClientModule} from '@angular/common/http';
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 
-import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
 import {RequestInterceptor} from './shared/services/request.interceptor';
 
 import {Error404Component} from './core/error-pages/error404/error404.component';
@@ -15,8 +14,7 @@ import {TariffsComponent} from './core/tariffs/tariffs.component';
 import {SafetyComponent} from './core/safety/safety.component';
 import {LegalComponent} from './core/legal/legal.component';
 import {HeaderComponent} from './core/header/header.component';
-import {UpServiceItemComponent} from './modules/home/up-service-item/up-service-item.component';
-import {ServerService} from './shared/services/server.service';
+import {UpServiceItemComponent} from './modules/home/up-services-list/up-service-item/up-service-item.component';
 import {ModalService} from './shared/services/modal.service';
 import {ModalComponent} from './shared/directives/modal.component';
 
@@ -52,7 +50,7 @@ import {ModalComponent} from './shared/directives/modal.component';
         LegalComponent,
         ModalComponent
     ],
-    providers: [ServerService, ModalService,
+    providers: [ModalService,
         {provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
     ]
 })

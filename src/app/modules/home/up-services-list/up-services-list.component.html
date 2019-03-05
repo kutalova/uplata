@@ -1,6 +1,7 @@
 <div class="services_wrapper">
-  <ul class="list-group" *ngFor="let service of services">
-    <li class="list-group-item"><a [routerLink]="[service.URI]">{{
-      service.name }}</a></li>
-  </ul>
+    <ul class="list-group" *ngFor="let service of services">
+        <li class="list-group-item"><a (click)="loadService(service)" [routerLink]="[service.URI]">{{
+            service.name }}</a></li>
+    </ul>
+    <app-up-service-item></app-up-service-item>
 </div>

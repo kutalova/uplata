@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
 import { Router } from '@angular/router';
 import 'rxjs/add/operator/catch';
+import { of } from 'rxjs';
 
 @Injectable()
 export class RequestInterceptor implements HttpInterceptor {
@@ -20,7 +21,7 @@ export class RequestInterceptor implements HttpInterceptor {
                         this.router.navigate(['/500']);
                     }
                 }
-                return Observable.of(err.error);
+                return of(err.error);
             });
 
     }
