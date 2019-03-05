@@ -4,6 +4,9 @@ import {FormsModule} from '@angular/forms';
 import {HttpClientModule} from '@angular/common/http';
 import {CommonModule} from '@angular/common';
 
+import {HTTP_INTERCEPTORS, HttpClientModule} from '@angular/common/http';
+import {RequestInterceptor} from './shared/services/request.interceptor';
+
 import {Error404Component} from './core/error-pages/error404/error404.component';
 import {Error500Component} from './core/error-pages/error500/error500.component';
 import {UsComponent} from './core/us/us.component';
@@ -49,7 +52,9 @@ import {ModalComponent} from './shared/directives/modal.component';
         LegalComponent,
         ModalComponent
     ],
-    providers: [ServerService, ModalService]
+    providers: [ServerService, ModalService,
+        {provide: HTTP_INTERCEPTORS, useClass: RequestInterceptor, multi: true}
+    ]
 })
 export class SharedModule {
 }

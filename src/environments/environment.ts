@@ -3,7 +3,7 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false,
+    production: false,
     serverDomain: 'https://uplata-test.firebaseio.com',
     serverDomainDefaultURL: 'https://uplata-test.firebaseio.com/uplata-test.json'
 };
