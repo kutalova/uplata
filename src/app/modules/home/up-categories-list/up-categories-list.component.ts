@@ -1,22 +1,35 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ServerService} from '../../../shared/server.service';
 import {takeWhile} from 'rxjs/operators';
-
+import { Router } from '@angular/router';
+import {HomeComponent} from '../home.component';
+import {UpServicesListComponent} from '../up-services-list/up-services-list.component';
+import {FaqComponent} from '../../../core/faq/faq.component';
 @Component({
-  selector: 'app-up-categories-list',
-  templateUrl: './up-categories-list.component.html',
-  styleUrls: ['./up-categories-list.component.scss']
+    selector: 'app-up-categories-list',
+    templateUrl: './up-categories-list.component.html',
+    styleUrls: ['./up-categories-list.component.scss']
 })
 export class UpCategoriesListComponent implements OnInit {
 
     categories = [];
     private alive = true;
-    constructor(private serverService: ServerService) {}
+
+    constructor(private serverService: ServerService, private router: Router) {
+    }
 
     ngOnInit() {
         this.serverService.getCategoriesList().pipe(takeWhile(() => this.alive))
             .subscribe(
-                (categories: any[]) => this.categories = categories,
+                (categories: any[]) => {
+                    this.categories = categories;
+                    for (let category of categories) {
+                        this.router.config.unshift(
+                            { path: category.URI, loadChildren: './modules/home/home.module#HomeModule' },
+                        );
+                    }
+
+                },
                 (error) => console.error(error)
             );
     }

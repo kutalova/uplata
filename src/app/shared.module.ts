@@ -1,21 +1,23 @@
-import { NgModule } from '@angular/core';
-import { RouterModule } from '@angular/router';
-import { FormsModule } from '@angular/forms';
-import { HttpClientModule } from '@angular/common/http';
-import { CommonModule } from '@angular/common';
+import {NgModule} from '@angular/core';
+import {RouterModule} from '@angular/router';
+import {FormsModule} from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
+import {CommonModule} from '@angular/common';
 
-import { Error404Component } from './core/error-pages/error404/error404.component';
-import { Error500Component } from './core/error-pages/error500/error500.component';
-import { UsComponent } from './core/us/us.component';
-import { FaqComponent } from './core/faq/faq.component';
-import { TariffsComponent } from './core/tariffs/tariffs.component';
-import { SafetyComponent } from './core/safety/safety.component';
-import { LegalComponent } from './core/legal/legal.component';
-import { HeaderComponent } from './core/header/header.component';
+import {Error404Component} from './core/error-pages/error404/error404.component';
+import {Error500Component} from './core/error-pages/error500/error500.component';
+import {UsComponent} from './core/us/us.component';
+import {FaqComponent} from './core/faq/faq.component';
+import {TariffsComponent} from './core/tariffs/tariffs.component';
+import {SafetyComponent} from './core/safety/safety.component';
+import {LegalComponent} from './core/legal/legal.component';
+import {HeaderComponent} from './core/header/header.component';
+import {UpServiceItemComponent} from './modules/home/up-service-item/up-service-item.component';
 
 @NgModule({
     exports: [
         HeaderComponent,
+        UpServiceItemComponent,
         Error404Component,
         Error500Component,
         UsComponent,
@@ -30,8 +32,10 @@ import { HeaderComponent } from './core/header/header.component';
         CommonModule,
         HttpClientModule
     ],
+    entryComponents: [UpServiceItemComponent],
     declarations: [
         HeaderComponent,
+        UpServiceItemComponent,
         Error404Component,
         Error500Component,
         UsComponent,
@@ -42,4 +46,5 @@ import { HeaderComponent } from './core/header/header.component';
     ],
     providers: []
 })
-export class SharedModule { }
+export class SharedModule {
+}

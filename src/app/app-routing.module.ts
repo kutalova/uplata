@@ -12,6 +12,9 @@ import {LegalComponent} from './core/legal/legal.component';
 
 const AppRouter: Routes = [
     {
+        path: '', pathMatch: 'full', loadChildren: './modules/home/home.module#HomeModule'
+    },
+    {
         path: '', component: PageWrapperComponent, children: [
             {
                 path: 'onas', component: UsComponent
@@ -30,18 +33,13 @@ const AppRouter: Routes = [
             },
             {
                 path: '404', component: Error404Component
-            },  
+            },
             {
-                path: '**', loadChildren: './modules/home/home.module#HomeModule'
+                path: '**', component: Error404Component
             }
         ]
     },
-    {
-        path: '', pathMatch: 'full', loadChildren: './modules/home/home.module#HomeModule'
-    },
-    // {
-    //     path: '**', loadChildren: './modules/home/home.module#HomeModule'
-    // }
+
 ];
 
 @NgModule({

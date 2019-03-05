@@ -2,6 +2,8 @@ import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {takeWhile} from 'rxjs/operators';
 import {ServerService} from '../../../shared/server.service';
+import {FaqComponent} from '../../../core/faq/faq.component';
+import {UpServiceItemComponent} from '../up-service-item/up-service-item.component';
 
 @Component({
     selector: 'app-up-services-list',
@@ -19,7 +21,14 @@ export class UpServicesListComponent implements OnInit {
         if (this.router.url !== '/') {
             this.serverService.getServicesList(this.router.url).pipe(takeWhile(() => this.alive))
                 .subscribe(
-                    (services: any[]) => this.services = services,
+                    (services: any[]) => {
+                        this.services = services;
+                        for (const service of services) {
+                            this.router.config.unshift(
+                                { path: this.router.url.substr(1) + '/' + service.URI, component: UpServiceItemComponent },
+                            );
+                        }
+                    },
                     (error) => console.error(error)
                 );
         }
