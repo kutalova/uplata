@@ -1,10 +1,8 @@
 import {Component, OnInit} from '@angular/core';
-import {ServerService} from '../../../shared/server.service';
+import {ServerService} from '../../../shared/services/server.service';
 import {takeWhile} from 'rxjs/operators';
 import { Router } from '@angular/router';
-import {HomeComponent} from '../home.component';
-import {UpServicesListComponent} from '../up-services-list/up-services-list.component';
-import {FaqComponent} from '../../../core/faq/faq.component';
+
 @Component({
     selector: 'app-up-categories-list',
     templateUrl: './up-categories-list.component.html',

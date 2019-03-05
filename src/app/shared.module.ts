@@ -13,6 +13,9 @@ import {SafetyComponent} from './core/safety/safety.component';
 import {LegalComponent} from './core/legal/legal.component';
 import {HeaderComponent} from './core/header/header.component';
 import {UpServiceItemComponent} from './modules/home/up-service-item/up-service-item.component';
+import {ServerService} from './shared/services/server.service';
+import {ModalService} from './shared/services/modal.service';
+import {ModalComponent} from './shared/directives/modal.component';
 
 @NgModule({
     exports: [
@@ -24,7 +27,8 @@ import {UpServiceItemComponent} from './modules/home/up-service-item/up-service-
         FaqComponent,
         TariffsComponent,
         SafetyComponent,
-        LegalComponent
+        LegalComponent,
+        ModalComponent
     ],
     imports: [
         RouterModule,
@@ -42,9 +46,10 @@ import {UpServiceItemComponent} from './modules/home/up-service-item/up-service-
         FaqComponent,
         TariffsComponent,
         SafetyComponent,
-        LegalComponent
+        LegalComponent,
+        ModalComponent
     ],
-    providers: []
+    providers: [ServerService, ModalService]
 })
 export class SharedModule {
 }

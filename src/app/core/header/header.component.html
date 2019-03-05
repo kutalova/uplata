@@ -1,7 +1,40 @@
 <nav>
-  <a routerLink="/">Главная</a>
-  <a routerLink="/onas">О нас</a>
-  <a routerLink="/faq">FAQ</a>
-  <a routerLink="/tarif">Тарифы</a>
-  <a routerLink="/legal">Правовая информация</a>
+    <a routerLink="/">Главная</a>
+    <a routerLink="/onas">О нас</a>
+    <a routerLink="/faq">FAQ</a>
+    <a routerLink="/tarif">Тарифы</a>
+    <a routerLink="/legal">Правовая информация</a>
+    <a (click)="openModal('sign-in')">Вход</a>
+    <a (click)="openModal('sign-up')">Регистрация</a>
 </nav>
+
+<modal id="sign-in">
+    <div class="modal">
+        <div class="modal-body">
+            <form (submit)="closeModal('sign-in')">
+                <legend>Авторизация на Уплате</legend>
+                <label for="login">Логин</label>
+                <input type="text" name="login" id="login" required/>
+                <label for="password">Пароль</label>
+                <input type="password" name="password" required id="password"/>
+            </form>
+            <button (click)="closeModal('sign-in');">Войти</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>
+<modal id="sign-up">
+    <div class="modal">
+        <div class="modal-body">
+            <form>
+                <legend>Регистрация на Уплате</legend>
+                <label for="email">Ваш Email</label>
+                <input type="email" name="login" id="email" required/>
+                <label for="password-in">Пароль</label>
+                <input type="password" name="password" required id="password-in"/>
+            </form>
+            <button (click)="closeModal('sign-up');">Зарегистрироваться</button>
+        </div>
+    </div>
+    <div class="modal-background"></div>
+</modal>

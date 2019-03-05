@@ -1,8 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {ActivatedRoute, Router} from '@angular/router';
 import {takeWhile} from 'rxjs/operators';
-import {ServerService} from '../../../shared/server.service';
-import {FaqComponent} from '../../../core/faq/faq.component';
+import {ServerService} from '../../../shared/services/server.service';
 import {UpServiceItemComponent} from '../up-service-item/up-service-item.component';
 
 @Component({

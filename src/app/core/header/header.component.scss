@@ -17,3 +17,55 @@ nav {
     }
   }
 }
+
+modal {
+  display: none;
+
+  .modal {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    overflow: auto;
+
+    .modal-body {
+      padding: 20px;
+      background: #fff;
+      margin: 40px auto;
+      width: 200px;
+    }
+  }
+
+  .modal-background {
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: #000;
+    opacity: 0.75;
+    z-index: 900;
+  }
+}
+
+body.modal-open {
+  overflow: hidden;
+}
+
+#sign-in, #sign-up{
+  legend{
+    margin: 1em 0;
+  }
+  label{
+    display: block;
+  }
+  input{
+    border-radius: 3px;
+    -webkit-appearance: none;
+    border: 1px silver solid;
+    height: 1.25em;
+    margin: .75em 0;
+  }
+}
